@@ -3,7 +3,9 @@
 Tool/model & version: ChatGPT
 
 Prompt: Load and parse the GEO series matrix file GSE11877_series_matrix.txt
-Given code: import pandas as pd
+Given code: 
+
+import pandas as pd
 import numpy as np
 import re
 
@@ -29,7 +31,9 @@ expr.head()
 What I changed before committing: N/A
 
 Prompt: Extract sample metadata for tissue type
-Given code: # Pull the tissue-type annotation line
+Given code: 
+
+# Pull the tissue-type annotation line
 tissue_line = [l for l in lines 
                if l.startswith("!Sample_characteristics_ch1\t\"tissue type")][0]
 
@@ -52,7 +56,9 @@ len(tissue_simple)
 What I changed before committing: N/A
 
 Prompt: Load and parse the GEO series matrix file GSE11877_series_matrix.txt
-Given code: import pandas as pd
+Given code: 
+
+import pandas as pd
 import numpy as np
 import re
 
@@ -75,7 +81,9 @@ expr.head()
 What I changed before committing: N/A
 
 Prompt: Clean and format the expression matrix
-Given code: # First column = probe IDs
+Given code: 
+
+# First column = probe IDs
 expr = expr.rename(columns={expr.columns[0]: "ID_REF"})
 expr = expr.set_index("ID_REF")
 
@@ -91,7 +99,9 @@ pheno.index = expr.columns  # ensure sample order matches columns
 What I changed before committing: N/A
 
 Prompt: Perform a differential expression analysis between bone marrow and peripheral blood samples
-Given code: from scipy.stats import ttest_ind
+Given code: 
+
+from scipy.stats import ttest_ind
 from statsmodels.stats.multitest import multipletests
 
 # Define sample groups
@@ -122,7 +132,9 @@ DE_sorted.head()
 What I changed before committing: N/A
 
 Prompt: Generate PCA, volcano, and heatmap plots
-Given code: from sklearn.decomposition import PCA
+Given code: 
+
+from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
 import seaborn as sns
 
